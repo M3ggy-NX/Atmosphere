@@ -65,9 +65,9 @@ int main(int argc, char **argv)
         printf("Failed to initialize spl: 0x%x\n", rc);
         can_reboot = false;
     } else {
-        FILE *f = fopen("sdmc:/atmosphere/reboot_payload.bin", "rb");
+        FILE *f = fopen("sdmc:/reboottopayload/payload.bin", "rb");
         if (f == NULL) {
-            printf("Failed to open atmosphere/reboot_payload.bin!\n");
+            printf("Failed to open reboottopayload/payload.bin!\n");
             can_reboot = false;
         } else {
             fread(g_reboot_payload, 1, sizeof(g_reboot_payload), f);
